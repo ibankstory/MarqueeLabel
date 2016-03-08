@@ -45,6 +45,7 @@ typedef void(^MLAnimationCompletionBlock)(BOOL finished);
 
 /* IB Custom: Add Icon ImageView */
 @property (nonatomic, strong) UIImageView *iconImageView;
+@property (nonatomic) CGSize icImageViewSize;
 
 // Support
 @property (nonatomic, strong) NSArray *gradientColors;
@@ -1370,22 +1371,30 @@ CGPoint MLOffsetCGPoint(CGPoint point, CGFloat offset);
 /** IB Custom: Add Icon Image **/
 - (void)setEndingIcon:(UIImage *)iconImage
 {
+    if (_icImageViewSize.width < 1 || _icImageViewSize.height < 1){
+        _icImageViewSize = CGSizeMake(self.subLabel.frame.size.height, self.subLabel.frame.size.height);
+    }
+    
     if (_iconImageView != nil){
         [_iconImageView removeFromSuperview];
         _iconImageView = nil;
     }
-    
-    _iconImageView = [[UIImageView alloc] initWithFrame:CGRectMake([self subLabelSize].width+10, 0, self.subLabel.frame.size.height, self.subLabel.frame.size.height)];
+    _iconImageView = [[UIImageView alloc] initWithFrame:CGRectMake([self subLabelSize].width+10, 0, _icImageViewSize.width, _icImageViewSize.height)];
     _iconImageView.image = iconImage;
     _iconImageView.backgroundColor = [UIColor clearColor];
     _iconImageView.contentMode = UIViewContentModeScaleAspectFit;
     [self.subLabel addSubview:_iconImageView];
 }
 
+- (void)setIconImageViewSize:(CGSize)size{
+    _icImageViewSize = size;
+    [self updateIconImageViewSize];
+}
+
 - (void)updateIconImageViewSize
 {
     if (_iconImageView){
-        _iconImageView.frame = CGRectMake([self subLabelSize].width+10, 0, self.subLabel.frame.size.height, self.subLabel.frame.size.height);
+        _iconImageView.frame = CGRectMake([self subLabelSize].width+10, ([self subLabelSize].height/2) - (_icImageViewSize.height/2), _icImageViewSize.width, _icImageViewSize.height);
     }
 }
 

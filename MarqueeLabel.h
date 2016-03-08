@@ -489,6 +489,7 @@ typedef NS_ENUM(NSUInteger, MarqueeType) {
 
 /** IB Custom: Add Icon Image **/
 - (void)setEndingIcon:(UIImage *)iconImage;
+- (void)setIconImageViewSize:(CGSize)size;
 
 @end
 
