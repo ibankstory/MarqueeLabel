@@ -43,6 +43,9 @@ typedef void(^MLAnimationCompletionBlock)(BOOL finished);
 @property (nonatomic, assign) CGFloat awayOffset;
 @property (nonatomic, assign, readwrite) BOOL isPaused;
 
+/* IB Custom: Add Icon ImageView */
+@property (nonatomic, strong) UIImageView *iconImageView;
+
 // Support
 @property (nonatomic, strong) NSArray *gradientColors;
 CGPoint MLOffsetCGPoint(CGPoint point, CGFloat offset);
@@ -223,6 +226,10 @@ CGPoint MLOffsetCGPoint(CGPoint point, CGFloat offset);
     _leadingBuffer = 0.0f;
     _trailingBuffer = 0.0f;
     
+    
+
+    
+    
     // Add notification observers
     // Custom class notifications
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(viewControllerShouldRestart:) name:kMarqueeLabelControllerRestartNotification object:nil];
@@ -307,6 +314,8 @@ CGPoint MLOffsetCGPoint(CGPoint point, CGFloat offset);
     // Calculate expected size
     CGSize expectedLabelSize = [self subLabelSize];
     
+    //update iconImageView Position
+    [self updateIconImageViewSize];
     
     // Invalidate intrinsic size
     [self invalidateIntrinsicContentSize];
@@ -451,6 +460,7 @@ CGPoint MLOffsetCGPoint(CGPoint point, CGFloat offset);
     // Adjust to own height (make text baseline match normal label)
     expectedLabelSize.height = self.bounds.size.height;
     
+    NSLog(@"expectedLabelSize %2f",expectedLabelSize.width);
     return expectedLabelSize;
 }
 
@@ -1356,9 +1366,30 @@ CGPoint MLOffsetCGPoint(CGPoint point, CGFloat offset);
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+#pragma mark - IB Custom
+/** IB Custom: Add Icon Image **/
+- (void)setEndingIcon:(UIImage *)iconImage
+{
+    if (_iconImageView != nil){
+        [_iconImageView removeFromSuperview];
+        _iconImageView = nil;
+    }
+    
+    _iconImageView = [[UIImageView alloc] initWithFrame:CGRectMake([self subLabelSize].width+10, 0, self.subLabel.frame.size.height, self.subLabel.frame.size.height)];
+    _iconImageView.image = iconImage;
+    _iconImageView.backgroundColor = [UIColor clearColor];
+    _iconImageView.contentMode = UIViewContentModeScaleAspectFit;
+    [self.subLabel addSubview:_iconImageView];
+}
+
+- (void)updateIconImageViewSize
+{
+    if (_iconImageView){
+        _iconImageView.frame = CGRectMake([self subLabelSize].width+10, 0, self.subLabel.frame.size.height, self.subLabel.frame.size.height);
+    }
+}
+
 @end
-
-
 
 #pragma mark - Helpers
 
@@ -1387,6 +1418,8 @@ CGPoint MLOffsetCGPoint(CGPoint point, CGFloat offset) {
         return nil;
     }
 }
+
+
 
 @end
 
@@ -1497,5 +1530,7 @@ CGPoint MLOffsetCGPoint(CGPoint point, CGFloat offset) {
     
     return [NSArray arrayWithArray:pointArray];
 }
+
+
 
 @end

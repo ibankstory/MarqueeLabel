@@ -14,9 +14,10 @@
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		28D7ACF80DDB3853001CB0EB /* MarqueeLabelDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* MarqueeLabelDemoViewController.m */; };
 		46EB5C141BB316DF005D2672 /* MarqueeLabel_Umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 46EB5C131BB316DF005D2672 /* MarqueeLabel_Umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		46EB5C191BB316FE005D2672 /* MarqueeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = EA646A1312F7A5B000F31B16 /* MarqueeLabel.m */; settings = {ASSET_TAGS = (); }; };
+		46EB5C191BB316FE005D2672 /* MarqueeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = EA646A1312F7A5B000F31B16 /* MarqueeLabel.m */; };
 		46EB5C241BB31A69005D2672 /* MarqueeLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = EA646A1212F7A5B000F31B16 /* MarqueeLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		46EB5C2A1BB31D90005D2672 /* module.map in Resources */ = {isa = PBXBuildFile; fileRef = 46EB5C291BB31D90005D2672 /* module.map */; settings = {ASSET_TAGS = (); }; };
+		46EB5C2A1BB31D90005D2672 /* module.map in Resources */ = {isa = PBXBuildFile; fileRef = 46EB5C291BB31D90005D2672 /* module.map */; };
+		8C285FED1C8EF42F00AB8DC7 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C285FEC1C8EF42F00AB8DC7 /* icon.png */; };
 		EA0E9AD41974C20200033CD7 /* MarqueeLabel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA0E9AD31974C20200033CD7 /* MarqueeLabel.storyboard */; };
 		EA646A1412F7A5B000F31B16 /* MarqueeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = EA646A1312F7A5B000F31B16 /* MarqueeLabel.m */; };
 		EABFD31A150D55CC00216FCE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EABFD319150D55CC00216FCE /* QuartzCore.framework */; };
@@ -38,6 +39,7 @@
 		46EB5C151BB316DF005D2672 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46EB5C291BB31D90005D2672 /* module.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.map; sourceTree = "<group>"; };
 		8B660C7D16BCFEEF007F9463 /* MarqueeLabelDemoNibs-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "MarqueeLabelDemoNibs-Info.plist"; path = "/Users/cbpowell/Projects/MarqueeLabel/MarqueeLabelDemo/MarqueeLabelDemoNibs-Info.plist"; sourceTree = "<absolute>"; };
+		8C285FEC1C8EF42F00AB8DC7 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* MarqueeLabelDemo-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "MarqueeLabelDemo-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		EA0E9AD31974C20200033CD7 /* MarqueeLabel.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MarqueeLabel.storyboard; sourceTree = "<group>"; };
 		EA41461716D340B4004A3B02 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
@@ -91,6 +93,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				8C285FEC1C8EF42F00AB8DC7 /* icon.png */,
 				EA0E9AD31974C20200033CD7 /* MarqueeLabel.storyboard */,
 				EA0E9AD51974C2AA00033CD7 /* Sources */,
 				080E96DDFE201D6D7F000001 /* Classes */,
@@ -240,6 +243,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C285FED1C8EF42F00AB8DC7 /* icon.png in Resources */,
 				EA0E9AD41974C20200033CD7 /* MarqueeLabel.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

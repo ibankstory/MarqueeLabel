@@ -180,6 +180,10 @@ typedef NS_ENUM(NSUInteger, MarqueeType) {
 @property (nonatomic, assign) MarqueeType marqueeType;
 #endif
 
+
+
+
+
 /** Defines the duration of the scrolling animation.
  
  This property sets the amount of time it will take for the scrolling animation to complete a
@@ -483,6 +487,8 @@ typedef NS_ENUM(NSUInteger, MarqueeType) {
 
 + (void)controllerLabelsShouldAnimate:(UIViewController *)controller;
 
+/** IB Custom: Add Icon Image **/
+- (void)setEndingIcon:(UIImage *)iconImage;
 
 @end
 
