@@ -1369,7 +1369,7 @@ CGPoint MLOffsetCGPoint(CGPoint point, CGFloat offset);
 
 #pragma mark - IB Custom
 /** IB Custom: Add Icon Image **/
-- (void)setEndingIcon:(UIImage *)iconImage
+- (void)setHeaderIcon:(UIImage *)iconImage
 {
     if (_icImageViewSize.width < 1 || _icImageViewSize.height < 1){
         _icImageViewSize = CGSizeMake(self.subLabel.frame.size.height, self.subLabel.frame.size.height);
@@ -1379,7 +1379,7 @@ CGPoint MLOffsetCGPoint(CGPoint point, CGFloat offset);
         [_iconImageView removeFromSuperview];
         _iconImageView = nil;
     }
-    _iconImageView = [[UIImageView alloc] initWithFrame:CGRectMake([self subLabelSize].width+10, 0, _icImageViewSize.width, _icImageViewSize.height)];
+    _iconImageView = [[UIImageView alloc] initWithFrame:CGRectMake(-_icImageViewSize.width-10, 0, _icImageViewSize.width, _icImageViewSize.height)];
     _iconImageView.image = iconImage;
     _iconImageView.backgroundColor = [UIColor clearColor];
     _iconImageView.contentMode = UIViewContentModeScaleAspectFit;
@@ -1394,7 +1394,7 @@ CGPoint MLOffsetCGPoint(CGPoint point, CGFloat offset);
 - (void)updateIconImageViewSize
 {
     if (_iconImageView){
-        _iconImageView.frame = CGRectMake([self subLabelSize].width+10, ([self subLabelSize].height/2) - (_icImageViewSize.height/2), _icImageViewSize.width, _icImageViewSize.height);
+        _iconImageView.frame = CGRectMake(- _icImageViewSize.width - 5, ([self subLabelSize].height/2) - (_icImageViewSize.height/2), _icImageViewSize.width, _icImageViewSize.height);
     }
 }
 

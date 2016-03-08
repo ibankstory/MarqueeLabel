@@ -59,7 +59,7 @@
     self.demoLabel2.fadeLength = 15.0f;
     self.demoLabel2.leadingBuffer = 40.0f;
     
-    [self.demoLabel2 setEndingIcon:[UIImage imageNamed:@"icon.png"]];
+    [self.demoLabel2 setHeaderIcon:[UIImage imageNamed:@"icon.png"]];
 //    [self.demoLabel2 setIconImageViewSize:CGSizeMake(10, 10)];
     
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:@"This is a long string, that's also an attributed string, which works just as well!"];
