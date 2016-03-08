@@ -461,7 +461,6 @@ CGPoint MLOffsetCGPoint(CGPoint point, CGFloat offset);
     // Adjust to own height (make text baseline match normal label)
     expectedLabelSize.height = self.bounds.size.height;
     
-    NSLog(@"expectedLabelSize %2f",expectedLabelSize.width);
     return expectedLabelSize;
 }
 
